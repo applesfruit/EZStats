@@ -1,6 +1,6 @@
 # EZStats
 
-A 1.7.10 Forge Mod to allow players to access easy stats like latency, FPS, and CPS
+A 1.7.10 Forge Mod to allow players to access easy stats like latency, FPS, and CPS.
 Currently a work in progress, all code is accessable in this repository, and the final compiled .jar file will not be obfuscated.
 
 I told Couleur that I would make a mod like this and it was pushed to the back of my head, but now that summer rolled around I have nothing better to do.
