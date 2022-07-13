@@ -1,0 +1,100 @@
+---- Minecraft Crash Report ----
+// I let you down. Sorry :(
+
+Time: 7/10/22 6:08 PM
+Description: Unexpected error
+
+java.lang.NullPointerException: Unexpected error
+	at me.applesfruit.ezstats.events.KeyEvent.onKey(KeyEvent.java:42)
+	at cpw.mods.fml.common.eventhandler.ASMEventHandler_6_KeyEvent_onKey_KeyInputEvent.invoke(.dynamic)
+	at cpw.mods.fml.common.eventhandler.ASMEventHandler.invoke(ASMEventHandler.java:54)
+	at cpw.mods.fml.common.eventhandler.EventBus.post(EventBus.java:140)
+	at cpw.mods.fml.common.FMLCommonHandler.fireKeyInput(FMLCommonHandler.java:540)
+	at net.minecraft.client.Minecraft.runTick(Minecraft.java:1964)
+	at net.minecraft.client.Minecraft.runGameLoop(Minecraft.java:1039)
+	at net.minecraft.client.Minecraft.run(Minecraft.java:962)
+	at net.minecraft.client.main.Main.main(Main.java:164)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at net.minecraft.launchwrapper.Launch.launch(Launch.java:135)
+	at net.minecraft.launchwrapper.Launch.main(Launch.java:28)
+	at net.minecraftforge.gradle.GradleStartCommon.launch(Unknown Source)
+	at GradleStart.main(Unknown Source)
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Stacktrace:
+	at me.applesfruit.ezstats.events.KeyEvent.onKey(KeyEvent.java:42)
+	at cpw.mods.fml.common.eventhandler.ASMEventHandler_6_KeyEvent_onKey_KeyInputEvent.invoke(.dynamic)
+	at cpw.mods.fml.common.eventhandler.ASMEventHandler.invoke(ASMEventHandler.java:54)
+	at cpw.mods.fml.common.eventhandler.EventBus.post(EventBus.java:140)
+	at cpw.mods.fml.common.FMLCommonHandler.fireKeyInput(FMLCommonHandler.java:540)
+
+-- Affected level --
+Details:
+	Level name: MpServer
+	All players: 1 total; [EntityClientPlayerMP['Player526'/183, l='MpServer', x=498.57, y=10.73, z=976.77]]
+	Chunk stats: MultiplayerChunkCache: 215, 215
+	Level seed: 0
+	Level generator: ID 01 - flat, ver 0. Features enabled: false
+	Level generator options: 
+	Level spawn location: World: (174,4,677), Chunk: (at 14,0,5 in 10,42; contains blocks 160,0,672 to 175,255,687), Region: (0,1; contains chunks 0,32 to 31,63, blocks 0,0,512 to 511,255,1023)
+	Level time: 6609 game time, 6609 day time
+	Level dimension: 0
+	Level storage version: 0x00000 - Unknown?
+	Level weather: Rain time: 0 (now: false), thunder time: 0 (now: false)
+	Level game mode: Game mode: creative (ID 1). Hardcore: false. Cheats: false
+	Forced entities: 45 total; [EntitySlime['Slime'/192, l='MpServer', x=538.28, y=4.00, z=1003.75], EntitySlime['Slime'/193, l='MpServer', x=544.53, y=4.00, z=999.45], EntitySlime['Slime'/194, l='MpServer', x=536.01, y=4.00, z=953.91], EntitySlime['Slime'/195, l='MpServer', x=538.11, y=4.00, z=954.24], EntitySlime['Slime'/196, l='MpServer', x=542.00, y=4.98, z=1013.99], EntitySlime['Slime'/197, l='MpServer', x=500.99, y=4.69, z=927.11], EntitySlime['Slime'/198, l='MpServer', x=547.79, y=4.00, z=983.97], EntitySlime['Slime'/199, l='MpServer', x=519.61, y=4.61, z=932.76], EntitySlime['Slime'/200, l='MpServer', x=516.56, y=4.00, z=938.79], EntitySlime['Slime'/201, l='MpServer', x=524.19, y=4.00, z=1038.09], EntitySlime['Slime'/202, l='MpServer', x=522.39, y=4.00, z=1028.33], EntitySlime['Slime'/203, l='MpServer', x=514.40, y=5.01, z=1039.74], EntitySlime['Slime'/204, l='MpServer', x=449.91, y=4.00, z=955.49], EntitySlime['Slime'/205, l='MpServer', x=540.79, y=4.00, z=941.90], EntitySlime['Slime'/206, l='MpServer', x=546.01, y=4.00, z=951.73], EntitySlime['Slime'/207, l='MpServer', x=442.69, y=4.01, z=985.18], EntitySlime['Slime'/208, l='MpServer', x=443.47, y=4.00, z=980.31], EntitySlime['Slime'/209, l='MpServer', x=443.97, y=4.00, z=1003.69], EntitySlime['Slime'/210, l='MpServer', x=442.96, y=4.00, z=965.16], EntitySlime['Slime'/211, l='MpServer', x=523.75, y=4.10, z=918.83], EntitySlime['Slime'/212, l='MpServer', x=520.99, y=4.00, z=914.23], EntitySlime['Slime'/213, l='MpServer', x=564.30, y=4.00, z=964.60], EntitySlime['Slime'/214, l='MpServer', x=564.13, y=4.00, z=946.09], EntitySlime['Slime'/215, l='MpServer', x=544.19, y=4.00, z=1046.72], EntitySlime['Slime'/216, l='MpServer', x=442.27, y=5.01, z=1027.47], EntitySlime['Slime'/217, l='MpServer', x=454.22, y=4.05, z=926.08], EntitySlime['Slime'/218, l='MpServer', x=556.20, y=4.00, z=915.41], EntitySlime['Slime'/219, l='MpServer', x=560.04, y=4.00, z=927.16], EntitySlime['Slime'/220, l='MpServer', x=575.28, y=4.35, z=941.36], EntitySlime['Slime'/221, l='MpServer', x=564.22, y=4.00, z=1037.71], EntitySlime['Slime'/222, l='MpServer', x=557.37, y=4.69, z=1051.45], EntitySlime['Slime'/223, l='MpServer', x=492.96, y=4.00, z=907.19], EntitySlime['Slime'/224, l='MpServer', x=528.28, y=4.00, z=906.02], EntitySlime['Slime'/229, l='MpServer', x=540.39, y=3.70, z=909.88], EntitySlime['Slime'/232, l='MpServer', x=432.94, y=3.67, z=919.10], EntitySlime['Slime'/247, l='MpServer', x=432.56, y=3.83, z=900.37], EntitySlime['Slime'/5111, l='MpServer', x=498.10, y=4.00, z=1025.10], EntitySlime['Slime'/184, l='MpServer', x=505.41, y=4.00, z=979.16], EntityClientPlayerMP['Player526'/183, l='MpServer', x=498.57, y=10.73, z=976.77], EntitySlime['Slime'/186, l='MpServer', x=485.78, y=4.00, z=981.92], EntitySlime['Slime'/187, l='MpServer', x=492.31, y=4.00, z=970.89], EntitySlime['Slime'/188, l='MpServer', x=505.34, y=4.00, z=1013.53], EntitySlime['Slime'/189, l='MpServer', x=479.22, y=5.01, z=1018.28], EntitySlime['Slime'/190, l='MpServer', x=482.78, y=4.00, z=958.72], EntitySlime['Slime'/191, l='MpServer', x=519.49, y=4.00, z=950.58]]
+	Retry entities: 0 total; []
+	Server brand: fml,forge
+	Server type: Integrated singleplayer server
+Stacktrace:
+	at net.minecraft.client.multiplayer.WorldClient.addWorldInfoToCrashReport(WorldClient.java:415)
+	at net.minecraft.client.Minecraft.addGraphicsAndWorldToCrashReport(Minecraft.java:2566)
+	at net.minecraft.client.Minecraft.run(Minecraft.java:991)
+	at net.minecraft.client.main.Main.main(Main.java:164)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at net.minecraft.launchwrapper.Launch.launch(Launch.java:135)
+	at net.minecraft.launchwrapper.Launch.main(Launch.java:28)
+	at net.minecraftforge.gradle.GradleStartCommon.launch(Unknown Source)
+	at GradleStart.main(Unknown Source)
+
+-- System Details --
+Details:
+	Minecraft Version: 1.7.10
+	Operating System: Windows 10 (amd64) version 10.0
+	Java Version: 1.8.0_301, Oracle Corporation
+	Java VM Version: Java HotSpot(TM) 64-Bit Server VM (mixed mode), Oracle Corporation
+	Memory: 225587984 bytes (215 MB) / 648544256 bytes (618 MB) up to 3760193536 bytes (3586 MB)
+	JVM Flags: 0 total; 
+	AABB Pool Size: 0 (0 bytes; 0 MB) allocated, 0 (0 bytes; 0 MB) used
+	IntCache: cache: 0, tcache: 0, allocated: 0, tallocated: 0
+	FML: MCP v9.05 FML v7.10.99.99 Minecraft Forge 10.13.4.1614 4 mods loaded, 4 mods active
+	States: 'U' = Unloaded 'L' = Loaded 'C' = Constructed 'H' = Pre-initialized 'I' = Initialized 'J' = Post-initialized 'A' = Available 'D' = Disabled 'E' = Errored
+	UCHIJAAAA	mcp{9.05} [Minecraft Coder Pack] (minecraft.jar) 
+	UCHIJAAAA	FML{7.10.99.99} [Forge Mod Loader] (forgeSrc-1.7.10-10.13.4.1614-1.7.10.jar) 
+	UCHIJAAAA	Forge{10.13.4.1614} [Minecraft Forge] (forgeSrc-1.7.10-10.13.4.1614-1.7.10.jar) 
+	UCHIJAAAA	ezstats{1.0} [EZStats] (ezstats-1.0.jar) 
+	Launched Version: 1.7.10
+	LWJGL: 2.9.1
+	OpenGL: Intel(R) Iris(R) Xe Graphics GL version 4.6.0 - Build 30.0.100.9864, Intel
+	GL Caps: Using GL 1.3 multitexturing.
+Using framebuffer objects because OpenGL 3.0 is supported and separate blending is supported.
+Anisotropic filtering is supported and maximum anisotropy is 16.
+Shaders are available because OpenGL 2.1 is supported.
+
+	Is Modded: Definitely; Client brand changed to 'fml,forge'
+	Type: Client (map_client.txt)
+	Resource Packs: []
+	Current Language: English (US)
+	Profiler Position: N/A (disabled)
+	Vec3 Pool Size: 0 (0 bytes; 0 MB) allocated, 0 (0 bytes; 0 MB) used
+	Anisotropic Filtering: On (16)

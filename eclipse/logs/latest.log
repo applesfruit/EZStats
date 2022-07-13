@@ -1,0 +1,27 @@
+[20:20:09] [main/INFO]: Setting user: Player838
+[20:20:11] [Client thread/INFO]: LWJGL Version: 2.9.1
+[20:20:19] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:EZStats
+[20:20:20] [Sound Library Loader/INFO]: Sound engine started
+[20:20:21] [Client thread/INFO]: Created: 32x32 textures/blocks-atlas
+[20:20:21] [Client thread/INFO]: Created: 16x16 textures/items-atlas
+[20:20:21] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:EZStats
+[20:20:22] [Client thread/INFO]: Created: 1024x512 textures/blocks-atlas
+[20:20:22] [Client thread/INFO]: Created: 256x256 textures/items-atlas
+[20:20:23] [Sound Library Loader/INFO]: Sound engine started
+[20:20:48] [Server thread/INFO]: Starting integrated minecraft server version 1.7.10
+[20:20:48] [Server thread/INFO]: Generating keypair
+[20:20:48] [Server thread/INFO]: Preparing start region for level 0
+[20:20:49] [Server thread/INFO]: Changing view distance to 16, from 10
+[20:20:50] [Server thread/INFO]: Player838[local:E:cb18310e] logged in with entity id 287 at (166.27363719381762, 16.66048462940484, 582.249209930725)
+[20:20:50] [Server thread/INFO]: Player838 joined the game
+[20:21:10] [Server thread/INFO]: Saving and pausing game...
+[20:21:10] [Server thread/INFO]: Saving chunks for level 'New World'/Overworld
+[20:21:10] [Server thread/INFO]: Saving chunks for level 'New World'/Nether
+[20:21:10] [Server thread/INFO]: Saving chunks for level 'New World'/The End
+[20:26:12] [Client thread/INFO]: Stopping!
+[20:26:12] [Server thread/INFO]: Stopping server
+[20:26:12] [Server thread/INFO]: Saving players
+[20:26:12] [Server thread/INFO]: Saving worlds
+[20:26:12] [Server thread/INFO]: Saving chunks for level 'New World'/Overworld
+[20:26:12] [Server thread/INFO]: Saving chunks for level 'New World'/Nether
+[20:26:12] [Server thread/INFO]: Saving chunks for level 'New World'/The End
