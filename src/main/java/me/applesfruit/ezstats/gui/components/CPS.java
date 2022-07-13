@@ -1,66 +1,56 @@
 package me.applesfruit.ezstats.gui.components;
 
-import cpw.mods.fml.common.eventhandler.SubscribeEvent;
-import cpw.mods.fml.common.gameevent.InputEvent;
-import org.lwjgl.input.Mouse;
-
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 public class CPS {
 
-    private List<Long> left = new ArrayList<Long>();
-    private long llast;
-    private boolean lwas;
-    private List<Long> right = new ArrayList<Long>();
-    private long rlast;
-    private boolean rwas;
+    private static List<Long> leftClicks = new ArrayList<Long>();
 
-    @SubscribeEvent
-    public void onClick(InputEvent.MouseInputEvent event)
+
+    private static List<Long> rightClicks = new ArrayList<Long>();
+
+    // Styles
+    public static String noTextCPS()
     {
-        String left = Mouse.getButtonName(0);
-        String right = Mouse.getButtonName(1);
+        return getLeftClicks() + " | " + getRightClicks();
+    }
 
-        boolean lpressed = Mouse.isButtonDown(0);
-        boolean r = Mouse.isButtonDown(Mouse.getEventButton());
+    public static String normal()
+    {
+        return "CPS: " + getLeftClicks() + " | " + getRightClicks();
+    }
 
-        if (Mouse.getButtonName(Mouse.getEventButton()) == left)
-        {
-            if (lpressed != lwas)
-            {
-                llast = System.currentTimeMillis();
-                lwas = lpressed;
-                if (lpressed)
-                {
-                    this.left.add(llast);
-                }
-            }
+    public static String backwards()
+    {
+        return getLeftClicks() + " | " + getRightClicks() + "CPS";
+    }
+
+    public static void addLeftClick() {
+        leftClicks.add(System.currentTimeMillis());
+    }
+
+    public static int getLeftClicks() {
+        Iterator<Long> iterator = leftClicks.iterator();
+        while (iterator.hasNext()) {
+            if (iterator.next() >= System.currentTimeMillis() - 1000L) continue;
+            iterator.remove();
         }
+        return leftClicks.size();
+    }
 
-        if (Mouse.getButtonName(Mouse.getEventButton()) == right)
-        {
-            System.out.println("RIGHT");
+    public static void addRightClick() {
+        rightClicks.add(System.currentTimeMillis());
+    }
+
+    public static int getRightClicks() {
+        Iterator<Long> iterator = rightClicks.iterator();
+        while (iterator.hasNext()) {
+            if (iterator.next() >= System.currentTimeMillis() - 1000L) continue;
+            iterator.remove();
         }
-
+        return rightClicks.size();
     }
 
-    public int getRight()
-    {
-        long current = System.currentTimeMillis();
-        right.removeIf(aLong -> aLong + 1000 < current);
-        return right.size();
-    }
-
-    public int getLeft()
-    {
-        long current = System.currentTimeMillis();
-        left.removeIf(aLong -> aLong + 1000 < current);
-        return left.size();
-    }
-
-    public static CPS getInstance()
-    {
-        return new CPS();
-    }
 }

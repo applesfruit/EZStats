@@ -8,6 +8,7 @@ import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.network.NetworkRegistry;
+import me.applesfruit.ezstats.config.FileManager;
 import me.applesfruit.ezstats.events.KeyEvent;
 import me.applesfruit.ezstats.gui.GHandler;
 import me.applesfruit.ezstats.proxy.ServerProxy;
@@ -32,11 +33,15 @@ public class EZStats
     public void init(FMLInitializationEvent event)
     {
 
-        FMLCommonHandler.instance().bus().register(new KeyEvent());
-
         sp.register();
 
         NetworkRegistry.INSTANCE.registerGuiHandler(mod, new GHandler());
+    }
+
+    @Mod.EventHandler
+    public void post(FMLPostInitializationEvent event)
+    {
+        FileManager.instance.createMain();
     }
 
     public static EZStats getInstance()
