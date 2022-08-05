@@ -2,13 +2,13 @@
 {
   "modid": "ezstats",
   "name": "EZStats",
-  "description": "EZStats is a mod that adds easy access to useful statistics that don't come with vanilla Minecraft.",
-  "version": "${version}",
+  "description": "EZStats adds easy access to useful statistics that don't come with vanilla Minecraft.",
+  "version": "0.7",
   "mcversion": "1.7.10",
   "url": "https://github.com/applesfruit/EZStats",
   "updateUrl": "",
   "authorList": ["applesfruit"],
-  "credits": "applesfruit - Developer",
+  "credits": "Thanks Canelex for the dragging system!",
   "logoFile": "",
   "screenshots": [],
   "dependencies": []

@@ -1,10 +1,10 @@
-package me.applesfruit.ezstats.events;
+package me.applesfruit.ezstats.handlers;
 
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
-import me.applesfruit.ezstats.gui.components.CPS;
+import me.applesfruit.ezstats.gui.components.impl.CPS;
 import net.minecraftforge.client.event.MouseEvent;
 
-public class ClickEvent {
+public class ClickHandler {
 
     private boolean clickedInTickLeft = false;
     private boolean clickedInTickRight = false;
@@ -33,6 +33,5 @@ public class ClickEvent {
             return;
         }
     }
-
 
 }
