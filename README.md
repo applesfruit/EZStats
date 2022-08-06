@@ -1,5 +1,7 @@
 # EZStats
 
+## Support Discord Server: https://discord.gg/eRFyvbdFE8
+
 A 1.7.10 Forge Mod to allow players to access easy stats like latency, FPS, and CPS.
 Currently a work in progress, all code is accessable in this repository, and the final compiled .jar file will not be obfuscated.
 
