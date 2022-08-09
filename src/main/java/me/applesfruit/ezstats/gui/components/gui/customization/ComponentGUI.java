@@ -26,6 +26,11 @@ public class ComponentGUI extends GuiScreen {
     private GuiSlider cpsAlpha;
     public GuiSlider cpsModes;
 
+    private GuiSlider latencyRed;
+    private GuiSlider latencyGreen;
+    private GuiSlider latencyBlue;
+    private GuiSlider latencyAlpha;
+
     public ComponentGUI(EZStats instance)
     {
         this.instance = instance;
@@ -64,6 +69,18 @@ public class ComponentGUI extends GuiScreen {
         this.buttonList.add(this.cpsBlue);
         this.buttonList.add(this.cpsAlpha);
         this.buttonList.add(this.cpsModes);
+
+        int lrgba = this.instance.latencyColor.getValue().intValue();
+        this.buttonList.add(new GuiButton(1014, this.width / 8 + 120, this.height / 7 + 15, 80, 20, "Toggle Latency"));
+        this.latencyRed = new GuiSlider(1015, this.width /  8 + 120, this.height / 7 + 45, 80, 20, "Red: ", "", 0, 255, lrgba >> 16 & 0xFF, false, true);
+        this.latencyGreen = new GuiSlider(1016, this.width / 8 + 120, this.height / 7 + 75, 80, 20, "Green: ", "", 0, 255, lrgba >> 8 & 0xFF, false, true);
+        this.latencyBlue = new GuiSlider(1017, this.width / 8 + 120, this.height / 7 + 105, 80, 20, "Blue: ", "", 0, 255, lrgba & 0xFF, false, true);
+        this.latencyAlpha = new GuiSlider(1018, this.width / 8 + 120, this.height / 7 + 135, 80, 20, "Alpha: ", "", 1, 255, lrgba >> 24 & 0xFF, false, true);
+        this.buttonList.add(new GuiButton(1019, this.width / 8 + 120, this.height / 7 + 195, 80, 20, "Reset Latency"));
+        this.buttonList.add(this.latencyRed);
+        this.buttonList.add(this.latencyGreen);
+        this.buttonList.add(this.latencyBlue);
+        this.buttonList.add(this.latencyAlpha);
         super.initGui();
     }
 
@@ -74,6 +91,7 @@ public class ComponentGUI extends GuiScreen {
         this.drawCenteredString(this.mc.fontRenderer, "FPS", this.width / 8, this.height / 7, -1);
 
         this.drawCenteredString(this.mc.fontRenderer, "CPS", this.width / 8 + 80, this.height / 7, -1);
+        this.drawCenteredString(this.mc.fontRenderer, "Latency", this.width / 8 + 160, this.height / 7, -1);
 
         this.update();
         super.drawScreen(p_73863_1_, p_73863_2_, p_73863_3_);
@@ -99,6 +117,15 @@ public class ComponentGUI extends GuiScreen {
                 this.instance.getGuiCPS().setPosY(10);
                 this.instance.getGuiCPS().setPosX(130);
                 this.instance.getGuiFPS().setScale(1.0f);
+                break;
+            case 1014:
+                this.instance.getGuiLatency().setEnabled(this.instance.getGuiLatency().isEnabled());
+                break;
+            case 1019:
+                this.instance.getGuiLatency().setEnabled(true);
+                this.instance.getGuiLatency().setPosY(10);
+                this.instance.getGuiLatency().setPosX(130);
+                this.instance.getGuiLatency().setScale(1.0f);
                 break;
         }
     }
