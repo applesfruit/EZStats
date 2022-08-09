@@ -10,6 +10,7 @@ import cpw.mods.fml.common.network.NetworkRegistry;
 import me.applesfruit.ezstats.gui.components.gui.DragGUI;
 import me.applesfruit.ezstats.gui.components.gui.customization.ComponentGUI;
 import me.applesfruit.ezstats.gui.components.impl.FPS;
+import me.applesfruit.ezstats.gui.components.impl.Latency;
 import me.applesfruit.ezstats.handlers.CMDHandler;
 import me.applesfruit.ezstats.handlers.ClickHandler;
 import me.applesfruit.ezstats.handlers.GHandler;
@@ -38,6 +39,7 @@ public class EZStats
 
     private Minecraft mc;
 
+    private Latency latency;
     private CPS cps;
     private FPS fps;
     private LinkedHashSet<DragGUI> dragGUIs;
@@ -53,6 +55,9 @@ public class EZStats
     public MutableFloat cpsScale = new MutableFloat(1.0f);
     public MutableInt cpsColor = new MutableInt(-1);
     public MutableInt cpsMode = new MutableInt(1);
+
+    public MutableFloat latencyScale = new MutableFloat(1.0f);
+    public MutableInt latencyColor = new MutableInt(-1);
 
 
 
@@ -75,6 +80,9 @@ public class EZStats
 
         this.fps = new FPS(this, 130, 10, 1.0f);
         this.dragGUIs.add(this.fps);
+
+        this.latency = new Latency(this, 130, 10, 1.0f);
+        this.dragGUIs.add(this.latency);
         this.load();
 
         ClientCommandHandler.instance.registerCommand(new CMDHandler(this));
@@ -115,6 +123,10 @@ public class EZStats
 
     public FPS getGuiFPS() { return this.fps; }
 
+    public Latency getGuiLatency(){
+        return this.latency;
+    }
+
     public void render()
     {
         for (DragGUI gui : this.dragGUIs)
@@ -141,6 +153,7 @@ public class EZStats
         this.update(config, false);
         this.fps.setScale(this.fpsScale.getValue().floatValue());
         this.cps.setScale(this.cpsScale.getValue().floatValue());
+        this.latency.setScale(this.latencyScale.getValue().floatValue());
     }
 
     private void update(Configuration c, boolean s)
@@ -193,6 +206,26 @@ public class EZStats
         p = c.get("CPS", "CPS_MODE", 1);
         if (s) p.set(this.cpsMode.getValue());
         else this.cpsMode = new MutableInt(p.getInt());
+
+        p = c.get("LATENCY", "LATENCY_SCALE", 1.0f);
+        if (s) p.set(this.getGuiLatency().getScale());
+        else this.latencyScale = new MutableFloat(p.getDouble());
+
+        p = c.get("LATENCY", "LATENCY_COLOR", new Color(255, 255, 255).getRGB());
+        if (s) p.set(this.latencyColor.getValue());
+        else this.latencyColor = new MutableInt(p.getInt());
+
+        p = c.get("LATENCY", "LATENCY_POSX", 10);
+        if (s) p.set(this.getGuiLatency().getPosX());
+        else this.latency.setPosX(p.getInt());
+
+        p = c.get("LATENCY", "LATENCY_POSY", 10);
+        if (s) p.set(this.getGuiLatency().getPosY());
+        else this.latency.setPosY(p.getInt());
+
+        p = c.get("LATENCY", "LATENCY_ENABLED", true);
+        if (s) p.set(this.latency.isEnabled());
+        else this.latency.setEnabled(p.getBoolean());
     }
 
 
