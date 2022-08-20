@@ -10,3 +10,9 @@ I told Couleur that I would make a mod like this and it was pushed to the back o
 A 1.8.9 version will most likely be released along with this.
 
 ## If you would like to add this mod to your modpack/client send me a message on Discord: fruits#1845
+
+## CREDITS
+I will not take ALL of the credit for me as I couldn't really have done it without any of these people. (Although it's not a hard mod for me to develop, a lot of these people were really helpful)
+- Couleur - for inspiring me to make some kind of mod for 1.7.10.
+- Canelex - for allowing me to use his mod system to allow all of the different mods
+- Poiu - Although he didn't do much, he still helped with the less than ideal but sometimes working ping module.
