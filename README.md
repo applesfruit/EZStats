@@ -1,4 +1,4 @@
-# EZStats
+# EZStats (NOT BEING UPDATED ANYMORE)
 
 ## Support/Update Discord Server: https://discord.gg/eRFyvbdFE8
 
