@@ -23,7 +23,7 @@ minecraft {
     runDir = "eclipse"
 }
 
-version = "0.7"
+version = "1.0"
 group= "me.applesfruit.ezstats" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = "ezstats"
 

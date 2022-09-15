@@ -1,7 +1,7 @@
 package me.applesfruit.ezstats.handlers;
 
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
-import me.applesfruit.ezstats.gui.components.impl.CPS;
+import me.applesfruit.ezstats.gui.impl.CPS;
 import net.minecraftforge.client.event.MouseEvent;
 
 public class ClickHandler {

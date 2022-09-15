@@ -4,7 +4,7 @@ import cpw.mods.fml.common.FMLCommonHandler;
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import cpw.mods.fml.common.gameevent.TickEvent;
 import me.applesfruit.ezstats.EZStats;
-import me.applesfruit.ezstats.gui.ConfigurationGUI;
+import me.applesfruit.ezstats.gui.settings.SettingsGUI;
 import net.minecraft.client.Minecraft;
 import net.minecraft.command.CommandBase;
 import net.minecraft.command.ICommandSender;
@@ -12,11 +12,11 @@ import net.minecraft.command.ICommandSender;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CMDHandler extends CommandBase {
+public class CMDHandlerSettings extends CommandBase {
 
     private EZStats instance;
 
-    public CMDHandler(EZStats instance)
+    public CMDHandlerSettings(EZStats instance)
     {
         this.instance = instance;
     }
@@ -24,12 +24,12 @@ public class CMDHandler extends CommandBase {
 
     @Override
     public String getCommandName() {
-        return "ezstats";
+        return "ezsettings";
     }
 
     @Override
     public String getCommandUsage(ICommandSender p_71518_1_) {
-        return "/ezstats";
+        return "/ezsettings";
     }
 
     @Override
@@ -45,8 +45,7 @@ public class CMDHandler extends CommandBase {
     @Override
     public List getCommandAliases() {
         List aliases = new ArrayList<String>();
-        aliases.add("applesfruitisverycool");
-        aliases.add("ezst");
+        aliases.add("ezsg");
         return aliases;
     }
 
@@ -54,6 +53,7 @@ public class CMDHandler extends CommandBase {
     public void onTick(TickEvent.ClientTickEvent event)
     {
         FMLCommonHandler.instance().bus().unregister(this);
-        Minecraft.getMinecraft().displayGuiScreen(new ConfigurationGUI(this.instance));
+        Minecraft.getMinecraft().displayGuiScreen(new SettingsGUI(this.instance));
     }
+
 }
