@@ -1,5 +1,5 @@
 # EZStats (NOT BEING UPDATED ANYMORE)
-
+## DOWNLOAD: https://applesfruit.is-a.dev/downloads
 ## Support/Update Discord Server: https://discord.gg/eRFyvbdFE8
 
 A 1.7.10 Forge Mod to allow players to access easy stats like latency, FPS, and CPS.
