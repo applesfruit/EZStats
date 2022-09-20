@@ -73,33 +73,33 @@ public class ArmorStatus extends DragGUI {
             {
                 if (dmg >= 1000)
                 {
-                    fr.drawString(String.valueOf(dmg), mx + 16, my + (-16 * i) + 55, -1);
+                    fr.drawString(String.valueOf(dmg), mx + 16, my + (-16 * i) + 55, -1, true);
                 }
                 else
                 {
-                    fr.drawString(String.valueOf(dmg), mx + 18, my + (-16 * i) + 55, -1);
+                    fr.drawString(String.valueOf(dmg), mx + 18, my + (-16 * i) + 55, -1, true);
                 }
             }
             else if (this.instance.armorMode.intValue() == 2)
             {
                 if (dmg >= 1000)
                 {
-                    fr.drawString(String.valueOf(dmg), (int) (mx + 1.5), my + (-16 * i) + 55, -1);
+                    fr.drawString(String.valueOf(dmg), (int) (mx + 1.5), my + (-16 * i) + 55, -1, true);
                 }
                 else
                 {
-                    fr.drawString(String.valueOf(dmg), mx + 3, my + (-16 * i) + 55, -1);
+                    fr.drawString(String.valueOf(dmg), mx + 3, my + (-16 * i) + 55, -1, true);
                 }
             }
             else
             {
                 if (dmg >= 1000)
                 {
-                    fr.drawString(String.valueOf(dmg), mx + 16, my + (-16 * i) + 55, -1);
+                    fr.drawString(String.valueOf(dmg), mx + 16, my + (-16 * i) + 55, -1, true);
                 }
                 else
                 {
-                    fr.drawString(String.valueOf(dmg), mx + 18, my + (-16 * i) + 55, -1);
+                    fr.drawString(String.valueOf(dmg), mx + 18, my + (-16 * i) + 55, -1, true);
                 }
             }
         }

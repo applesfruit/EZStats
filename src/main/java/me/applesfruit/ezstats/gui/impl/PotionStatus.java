@@ -2,9 +2,9 @@ package me.applesfruit.ezstats.gui.impl;
 
 import me.applesfruit.ezstats.EZStats;
 import me.applesfruit.ezstats.gui.DragGUI;
-import me.applesfruit.ezstats.util.GlStateManager;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.FontRenderer;
+import net.minecraft.client.renderer.InventoryEffectRenderer;
 import net.minecraft.client.renderer.Tessellator;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.potion.Potion;
@@ -53,8 +53,16 @@ public class PotionStatus extends DragGUI {
 
             if (!collection.isEmpty())
             {
-                GlStateManager.color(1.0F, 1.0F, 1.0F, 1.0F);
-                GlStateManager.disableLighting();
+                GL11.glColor4f(1.0f, 1.0f, 1.0f, 1.0f);
+                GL11.glEnable(32826);
+                GL11.glDisable(2896);
+                GL11.glEnable(3042);
+                GL11.glDisable(2929);
+                GL11.glDepthMask(false);
+                GL11.glBlendFunc(770, 771);
+                GL11.glColor4f(1.0f, 1.0f, 1.0f, 1.0f);
+                GL11.glPushMatrix();
+                GL11.glDisable(3008);
                 int l = 33;
 
                 if (collection.size() > 5)
@@ -65,10 +73,10 @@ public class PotionStatus extends DragGUI {
                 for (Iterator iterator = this.mc.thePlayer.getActivePotionEffects().iterator(); iterator.hasNext(); i += i2)
                 {
                     PotionEffect potionEffect = (PotionEffect) iterator.next();
-                    GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
                     Potion potion = Potion.potionTypes[potionEffect.getPotionID()];
                     int i1 = potion.getStatusIconIndex();
-                    Minecraft.getMinecraft().getTextureManager().bindTexture(new ResourceLocation("textures/gui/container/inventory.png"));
+                    GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
+                    this.mc.getTextureManager().bindTexture(new ResourceLocation("textures/gui/container/inventory.png"));
                     drawTexturedModalRect((posX + offsetX) - 20, (posY + i2) - offsetY, 0 + i1 % 8 * 18, 198 + i1 / 8 * 18, 18, 18);
 
                     potion.renderInventoryEffect((posX + offsetX) - 20, (posY + i2) - offsetY, potionEffect, Minecraft.getMinecraft());
@@ -87,13 +95,16 @@ public class PotionStatus extends DragGUI {
                         s1 = s1 + " " + I18n.format("enchantment.level.4", new Object[0]);
                     }
 
-                    GL11.glEnable(3042);
                     fr.drawString(s1, posX + offsetX, (posY + i2) - offsetY, 16777215, true);
                     String s = Potion.getDurationString(potionEffect);
                     fr.drawString(s, posX + offsetX, (posY + i2 + 10) - offsetY, 8355711, true);
-                    GL11.glDisable(3042);
                     i2 += l;
                 }
+                GL11.glDisable(3042);
+                GL11.glEnable(2929);
+                GL11.glDisable(32826);
+                GL11.glDepthMask(true);
+                GL11.glPopMatrix();
             }
         }
     }

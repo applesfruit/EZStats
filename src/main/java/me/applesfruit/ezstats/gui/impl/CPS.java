@@ -42,7 +42,7 @@ public class CPS extends DragGUI {
             int my = this.posY + (this.getHeight() - fr.FONT_HEIGHT) / 2 + 1;
 
             GL11.glEnable(3042);
-            fr.drawString(mode(), mx, my, this.instance.cpsColor.getValue().intValue());
+            fr.drawString(mode(), mx, my, this.instance.cpsColor.getValue().intValue(), true);
             GL11.glDisable(3042);
         }
     }

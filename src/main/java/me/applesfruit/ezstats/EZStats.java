@@ -39,7 +39,7 @@ public class EZStats
 
     public static final String modid = "ezstats";
     public static final String name = "EZStats";
-    public static final String version = "1.0";
+    public static final String version = "1.1";
 
     public Minecraft mc;
     private CPS cps;
