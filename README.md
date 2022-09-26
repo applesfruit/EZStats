@@ -1,4 +1,4 @@
-# EZStats (NOT BEING UPDATED ANYMORE)
+# EZStats
 ## DOWNLOAD: https://applesfruit.is-a.dev/downloads
 ## Support/Update Discord Server: https://discord.gg/eRFyvbdFE8
 
