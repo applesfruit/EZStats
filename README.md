@@ -7,7 +7,7 @@ Currently a work in progress, all code is accessable in this repository, and the
 
 I told Couleur that I would make a mod like this and it was pushed to the back of my head, but now that summer rolled around I have nothing better to do.
 
-## If you would like to add this mod to your modpack/client send me a message on Discord: fruits#1845
+## If you would like to add this mod to your modpack/client send me a message on Discord: applesfruit
 
 ## CREDITS
 I will not take ALL of the credit for me as I couldn't really have done it without any of these people. (Although it's not a hard mod for me to develop, a lot of these people were really helpful)
